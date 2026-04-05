@@ -1,0 +1,98 @@
+#include <stdio.h>
+#include <string.h>
+int main(){
+
+    char ID [10];
+    char name [30];
+    int stock=0;
+    int opc=0;
+    int aux_cantidad;
+    float precio=0.0;
+    float ganancias_totales=0.0;
+    float descuento=0.0;
+    do {
+        printf("\n--------Menu de Ventas--------");
+        printf("\n-----Seleccione una opcion-----");
+        printf("\n1....... Registro del producto");
+        printf("\n2.Vender unidades del producto");
+        printf("\n3..... Reabastecer el producto");
+        printf("\n4.Consultar informacion del producto");
+        printf("\n5..........Ganancias obtenidas");
+        printf("\n6........................Salir");
+        printf("\nIngrese su opcion: ");
+
+        if (scanf("%d",&opc)!=1||opc<1||opc>6) {
+            printf("\nIngrese un numero valido");
+            while (getchar()!='\n');
+            continue;
+        }
+        
+        switch (opc)
+        {
+            case 1:
+
+                printf("\nIngrese el ID del producto: ");
+                scanf(" %s", ID);
+                printf("Ingrese el nombre de producto: ");
+                scanf(" %[^\n]s", name);
+                printf("Ingrese el stock inical: ");
+                scanf("%d", &stock);
+                printf("Ingrese precio unitario del producto: ");
+                scanf("%f", &precio);
+                printf(">>Su producto ha sido registrado<<\n");
+                break;
+            case 2:
+                if (stock<=0){
+                    printf("\n No hay stock disponible para vender");
+                }else{
+                    printf("Cuantas unidades del producto desea vender: ");
+                    
+                    if (scanf("%d",&aux_cantidad)!=1||aux_cantidad<0||aux_cantidad>stock){
+                        printf("Error: Solo hay %d unidades disponibes",stock);
+                        printf("Ingrese numeros positivos");
+                        while (getchar()!='\n');
+                        aux_cantidad=0;
+                        
+                    }else {
+                        float total_venta= aux_cantidad*precio;
+                        
+                        if (aux_cantidad>=12) {
+                            printf("Su descuento es del 10 porciento");
+                            total_venta=(aux_cantidad*precio)*0.90;
+                        }
+                        stock -= aux_cantidad;
+                        ganancias_totales += total_venta;
+                        
+                        printf("\nTotal a pagar $%.2f",total_venta);
+                        printf(">\n>Venta exitosa<<");
+                    }
+                    
+                }
+                break;
+            case 3:
+                printf("Cantidad de productoa a agregar: ");
+                if(scanf("%d",&aux_cantidad)!=1||aux_cantidad<0){
+                    printf("Error: ingrese un numero positivo");
+                }else{
+                    stock+= aux_cantidad;
+                    printf("Su stock a sido actualizado %d unidades",stock);
+                }
+                break;
+            case 4:
+                printf("\n--- INFO DEL PRODUCTO ---");
+                printf("\nID:\t\t%s", ID);
+                printf("\nNombre:\t\t%s", name);
+                printf("\nStock:\t\t%d unidades", stock);
+                printf("\nPrecio:\t\t$%.2f\n", precio);
+                break;
+            case 5:
+            
+                printf("\nGANANCIAS TOTALES: $%.2f", ganancias_totales);
+                printf("\n============================\n");
+                break;
+            default:
+                printf("\n[!] Opcion no valida.\n");
+        }
+    } while (opc!=6);
+    return 0;
+}
