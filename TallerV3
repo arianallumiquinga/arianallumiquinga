@@ -1,5 +1,6 @@
 #include <stdio.h>
 #include <string.h>
+// Ariana Llumiquinga ING, SOFWARE 2DO SEMESTRE UDLA
 int main(){
 
     char ID [10];
@@ -8,8 +9,11 @@ int main(){
     int opc=0;
     int aux_cantidad;
     float precio=0.0;
-    float ganancias_totales=0.0;
-    float descuento=0.0;
+    float acumulado_totales=0.0;
+    float subtotal=0.0;
+    float porc_desc=0.0;
+    float valor_descuento=0.0;
+    float total_final_ventas=0.0;
     do {
         printf("\n--------Menu de Ventas--------");
         printf("\n-----Seleccione una opcion-----");
@@ -54,19 +58,39 @@ int main(){
                         aux_cantidad=0;
                         
                     }else {
-                        float total_venta= aux_cantidad*precio;
+                        subtotal=aux_cantidad*precio;
+                        valor_descuento=0;
                         
-                        if (aux_cantidad>=12) {
-                            printf("Su descuento es del 10 porciento");
-                            total_venta=(aux_cantidad*precio)*0.90;
+                        if (aux_cantidad >= 12) {
+                            do {
+                                printf("Venta al por mayor. Ingrese descuento (0 a 25%%): ");
+                                
+                                if (scanf("%f", &porc_desc) != 1) { 
+                                    printf("[!] Error: Ingrese un numero decimal.\n");
+                                    while (getchar() != '\n'); 
+                                    porc_desc = -1; 
+                                    continue;
+                                }
+
+                                // 2. Luego validamos el valor
+                                if (porc_desc < 0 || porc_desc > 25) {
+                                    printf("[!] El descuento debe estar entre 0 y 25.\n");
+                                }
+                            } while (porc_desc < 0 || porc_desc > 25);
+
+                            valor_descuento = subtotal * (porc_desc / 100.0);
                         }
+
+                        total_final_ventas = subtotal - valor_descuento;
                         stock -= aux_cantidad;
-                        ganancias_totales += total_venta;
-                        
-                        printf("\nTotal a pagar $%.2f",total_venta);
-                        printf(">\n>Venta exitosa<<");
-                    }
-                    
+                        acumulado_totales+= total_final_ventas;
+
+                        printf("\n--- Ticket de Venta ---");
+                        printf("\nSubtotal:\t$%.2f", subtotal);
+                        printf("\nDesc. (%g%%):\t-$%.2f", porc_desc, valor_descuento);
+                        printf("\nTotal Pago:\t$%.2f", total_final_ventas);
+                        printf("\n>> Venta Exitosa <<\n");
+                    }  
                 }
                 break;
             case 3:
@@ -86,7 +110,7 @@ int main(){
                 printf("\nPrecio:\t\t$%.2f\n", precio);
                 break;
             case 5:
-                printf("\nGANANCIAS TOTALES: $%.2f", ganancias_totales);
+                printf("\nGANANCIAS TOTALES: $%.2f", total_final_ventas);
                 printf("\n============================\n");
                 break;
             case 6:
