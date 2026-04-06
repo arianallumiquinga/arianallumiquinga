@@ -86,12 +86,15 @@ int main(){
                 printf("\nPrecio:\t\t$%.2f\n", precio);
                 break;
             case 5:
-            
                 printf("\nGANANCIAS TOTALES: $%.2f", ganancias_totales);
                 printf("\n============================\n");
                 break;
+            case 6:
+                printf("Saliendo del programa..........");
+                break;
             default:
                 printf("\n[!] Opcion no valida.\n");
+                break;
         }
     } while (opc!=6);
     return 0;
