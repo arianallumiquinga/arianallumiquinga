@@ -1,0 +1,161 @@
+<html>
+<head>
+<title>CuerpoCeleste.java</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<style type="text/css">
+.s0 { color: #c679dd;}
+.s1 { color: #abb2bf;}
+.s2 { color: #a6b2c0;}
+.s3 { color: #ffffff;}
+.s4 { color: #a9d987;}
+.s5 { color: #e6bb65;}
+</style>
+</head>
+<body bgcolor="#282c34">
+<table CELLSPACING=0 CELLPADDING=5 COLS=1 WIDTH="100%" BGCOLOR="#606060" >
+<tr><td><center>
+<font face="Arial, Helvetica" color="#000000">
+CuerpoCeleste.java</font>
+</center></td></tr></table>
+<pre><span class="s0">public class </span><span class="s1">CuerpoCeleste </span><span class="s2">{</span>
+    <span class="s0">private </span><span class="s1">String nombre</span><span class="s2">;</span>
+    <span class="s0">private double </span><span class="s1">masaKg</span><span class="s2">;</span>
+    <span class="s0">private double </span><span class="s1">radioKm</span><span class="s2">;</span>
+    <span class="s0">private double </span><span class="s1">distanciaSol</span><span class="s2">;</span>
+    <span class="s0">private int </span><span class="s1">cantidadSatelites</span><span class="s2">;</span>
+    <span class="s3">// Constructor1</span>
+    <span class="s0">public </span><span class="s1">CuerpoCeleste</span><span class="s2">(){</span>
+        <span class="s0">this</span><span class="s2">.</span><span class="s1">nombre</span><span class="s2">= </span><span class="s4">&quot;Cuerpo 1.36&quot;</span><span class="s2">;</span>
+        <span class="s0">this</span><span class="s2">.</span><span class="s1">masaKg</span><span class="s2">= </span><span class="s5">8.6010</span><span class="s2">;</span>
+        <span class="s0">this</span><span class="s2">.</span><span class="s1">radioKm</span><span class="s2">=</span><span class="s5">1200</span><span class="s2">;</span>
+        <span class="s0">this</span><span class="s2">.</span><span class="s1">distanciaSol</span><span class="s2">=</span><span class="s5">60.12</span><span class="s2">;</span>
+        <span class="s0">this</span><span class="s2">.</span><span class="s1">cantidadSatelites</span><span class="s2">=</span><span class="s5">3</span><span class="s2">;</span>
+    <span class="s2">}</span>
+    <span class="s3">// Constructor 2</span>
+    <span class="s0">public </span><span class="s1">CuerpoCeleste</span><span class="s2">(</span><span class="s1">String nombre</span><span class="s2">, </span><span class="s0">double </span><span class="s1">masaKg</span><span class="s2">, </span><span class="s0">double </span><span class="s1">radioKm</span><span class="s2">) {</span>
+        <span class="s0">this</span><span class="s2">.</span><span class="s1">nombre </span><span class="s2">= </span><span class="s1">nombre</span><span class="s2">;</span>
+        <span class="s0">this</span><span class="s2">.</span><span class="s1">masaKg </span><span class="s2">= </span><span class="s1">masaKg</span><span class="s2">;</span>
+        <span class="s0">this</span><span class="s2">.</span><span class="s1">radioKm </span><span class="s2">= </span><span class="s1">radioKm</span><span class="s2">;</span>
+        <span class="s0">this</span><span class="s2">.</span><span class="s1">distanciaSol </span><span class="s2">= </span><span class="s5">0</span><span class="s2">;</span>
+        <span class="s0">this</span><span class="s2">.</span><span class="s1">cantidadSatelites </span><span class="s2">= </span><span class="s5">0</span><span class="s2">;</span>
+    <span class="s2">}</span>
+    <span class="s3">// Constructor 3</span>
+    <span class="s0">public </span><span class="s1">CuerpoCeleste</span><span class="s2">(</span><span class="s1">String nombre</span><span class="s2">,</span><span class="s0">double </span><span class="s1">masakg</span><span class="s2">,</span><span class="s0">double </span><span class="s1">radioKm</span><span class="s2">, </span><span class="s0">double </span><span class="s1">distanciaSol</span><span class="s2">, </span><span class="s0">int </span><span class="s1">cantidadSatelites</span><span class="s2">){</span>
+        <span class="s0">this</span><span class="s2">.</span><span class="s1">nombre</span><span class="s2">=</span><span class="s1">nombre</span><span class="s2">;</span>
+        <span class="s0">this</span><span class="s2">.</span><span class="s1">masaKg</span><span class="s2">=</span><span class="s1">masakg</span><span class="s2">;</span>
+        <span class="s0">this</span><span class="s2">.</span><span class="s1">radioKm</span><span class="s2">=</span><span class="s1">radioKm</span><span class="s2">;</span>
+        <span class="s0">this</span><span class="s2">.</span><span class="s1">distanciaSol</span><span class="s2">=</span><span class="s1">distanciaSol</span><span class="s2">;</span>
+        <span class="s0">this</span><span class="s2">.</span><span class="s1">cantidadSatelites</span><span class="s2">=</span><span class="s1">cantidadSatelites</span><span class="s2">;</span>
+
+    <span class="s2">}</span>
+    <span class="s3">// Getters y Setters</span>
+    <span class="s0">public </span><span class="s1">String getNombre</span><span class="s2">(){</span>
+        <span class="s0">return </span><span class="s1">nombre</span><span class="s2">;</span>
+    <span class="s2">}</span>
+    <span class="s0">public void </span><span class="s1">setNombre</span><span class="s2">(</span><span class="s1">String nombre</span><span class="s2">) {</span>
+        <span class="s0">if </span><span class="s2">(</span><span class="s1">nombre </span><span class="s2">!= </span><span class="s0">null </span><span class="s2">&amp;&amp; !</span><span class="s1">nombre</span><span class="s2">.</span><span class="s1">equals</span><span class="s2">(</span><span class="s4">&quot;&quot;</span><span class="s2">)) {</span>
+            <span class="s0">this</span><span class="s2">.</span><span class="s1">nombre </span><span class="s2">= </span><span class="s1">nombre</span><span class="s2">;</span>
+        <span class="s2">} </span><span class="s0">else </span><span class="s2">{</span>
+            <span class="s1">System</span><span class="s2">.</span><span class="s1">out</span><span class="s2">.</span><span class="s1">println</span><span class="s2">(</span><span class="s4">&quot;Error: el nombre no puede estar vacio.&quot;</span><span class="s2">);</span>
+        <span class="s2">}</span>
+    <span class="s2">}</span>
+
+    <span class="s0">public double </span><span class="s1">getMasaKg</span><span class="s2">() {</span>
+        <span class="s0">return </span><span class="s1">masaKg</span><span class="s2">;</span>
+    <span class="s2">}</span>
+
+    <span class="s0">public void </span><span class="s1">setMasaKg</span><span class="s2">(</span><span class="s0">double </span><span class="s1">masaKg</span><span class="s2">) {</span>
+        <span class="s0">if </span><span class="s2">(</span><span class="s1">masaKg </span><span class="s2">&gt; </span><span class="s5">0</span><span class="s2">) {</span>
+            <span class="s0">this</span><span class="s2">.</span><span class="s1">masaKg </span><span class="s2">= </span><span class="s1">masaKg</span><span class="s2">;</span>
+        <span class="s2">} </span><span class="s0">else </span><span class="s2">{</span>
+            <span class="s1">System</span><span class="s2">.</span><span class="s1">out</span><span class="s2">.</span><span class="s1">println</span><span class="s2">(</span><span class="s4">&quot;Error: la masa debe ser mayor que 0.&quot;</span><span class="s2">);</span>
+        <span class="s2">}</span>
+    <span class="s2">}</span>
+
+    <span class="s0">public double </span><span class="s1">getRadioKm</span><span class="s2">() {</span>
+        <span class="s0">return </span><span class="s1">radioKm</span><span class="s2">;</span>
+    <span class="s2">}</span>
+
+    <span class="s0">public void </span><span class="s1">setRadioKm</span><span class="s2">(</span><span class="s0">double </span><span class="s1">radioKm</span><span class="s2">) {</span>
+        <span class="s0">if </span><span class="s2">(</span><span class="s1">radioKm </span><span class="s2">&gt; </span><span class="s5">0</span><span class="s2">) {</span>
+            <span class="s0">this</span><span class="s2">.</span><span class="s1">radioKm </span><span class="s2">= </span><span class="s1">radioKm</span><span class="s2">;</span>
+        <span class="s2">} </span><span class="s0">else </span><span class="s2">{</span>
+            <span class="s1">System</span><span class="s2">.</span><span class="s1">out</span><span class="s2">.</span><span class="s1">println</span><span class="s2">(</span><span class="s4">&quot;Error: el radio debe ser mayor que 0.&quot;</span><span class="s2">);</span>
+        <span class="s2">}</span>
+    <span class="s2">}</span>
+
+    <span class="s0">public double </span><span class="s1">getDistanciaSol</span><span class="s2">() {</span>
+        <span class="s0">return </span><span class="s1">distanciaSol</span><span class="s2">;</span>
+    <span class="s2">}</span>
+
+    <span class="s0">public void </span><span class="s1">setDistanciaSol</span><span class="s2">(</span><span class="s0">double </span><span class="s1">distanciaSol</span><span class="s2">) {</span>
+        <span class="s0">if </span><span class="s2">(</span><span class="s1">distanciaSol </span><span class="s2">&gt;= </span><span class="s5">0</span><span class="s2">) {</span>
+            <span class="s0">this</span><span class="s2">.</span><span class="s1">distanciaSol </span><span class="s2">= </span><span class="s1">distanciaSol</span><span class="s2">;</span>
+        <span class="s2">} </span><span class="s0">else </span><span class="s2">{</span>
+            <span class="s1">System</span><span class="s2">.</span><span class="s1">out</span><span class="s2">.</span><span class="s1">println</span><span class="s2">(</span><span class="s4">&quot;Error: la distancia no puede ser negativa.&quot;</span><span class="s2">);</span>
+        <span class="s2">}</span>
+    <span class="s2">}</span>
+
+    <span class="s0">public int </span><span class="s1">getCantidadSatelites</span><span class="s2">() {</span>
+        <span class="s0">return </span><span class="s1">cantidadSatelites</span><span class="s2">;</span>
+    <span class="s2">}</span>
+
+    <span class="s0">public void </span><span class="s1">setCantidadSatelites</span><span class="s2">(</span><span class="s0">int </span><span class="s1">cantidadSatelites</span><span class="s2">) {</span>
+        <span class="s0">if </span><span class="s2">(</span><span class="s1">cantidadSatelites </span><span class="s2">&gt;= </span><span class="s5">0</span><span class="s2">) {</span>
+            <span class="s0">this</span><span class="s2">.</span><span class="s1">cantidadSatelites </span><span class="s2">= </span><span class="s1">cantidadSatelites</span><span class="s2">;</span>
+        <span class="s2">} </span><span class="s0">else </span><span class="s2">{</span>
+            <span class="s1">System</span><span class="s2">.</span><span class="s1">out</span><span class="s2">.</span><span class="s1">println</span><span class="s2">(</span><span class="s4">&quot;Error: la cantidad de satelites no pueden ser negativos.&quot;</span><span class="s2">);</span>
+        <span class="s2">}</span>
+    <span class="s2">}</span>
+    <span class="s3">// Calcular Volumen</span>
+    <span class="s0">public double </span><span class="s1">calcularVolumen</span><span class="s2">() {</span>
+        <span class="s0">double </span><span class="s1">radioM </span><span class="s2">= </span><span class="s1">radioKm </span><span class="s2">* </span><span class="s5">1000</span><span class="s2">;   </span><span class="s3">// km a m</span>
+        <span class="s0">return </span><span class="s2">(</span><span class="s5">4.0 </span><span class="s2">/ </span><span class="s5">3.0</span><span class="s2">) * </span><span class="s1">Math</span><span class="s2">.</span><span class="s1">PI </span><span class="s2">* </span><span class="s1">Math</span><span class="s2">.</span><span class="s1">pow</span><span class="s2">(</span><span class="s1">radioM</span><span class="s2">, </span><span class="s5">3</span><span class="s2">);</span>
+    <span class="s2">}</span>
+
+    <span class="s3">// Densidad = masa / volumen  (kg/m^3)</span>
+    <span class="s0">public double </span><span class="s1">calcularDensidad</span><span class="s2">() {</span>
+        <span class="s0">return </span><span class="s1">masaKg </span><span class="s2">/ </span><span class="s1">calcularVolumen</span><span class="s2">();</span>
+    <span class="s2">}</span>
+    <span class="s0">public double </span><span class="s1">calcularGravedad</span><span class="s2">() {</span>
+        <span class="s0">double </span><span class="s1">G </span><span class="s2">= </span><span class="s5">6.67430e-11</span><span class="s2">;</span>
+        <span class="s0">double </span><span class="s1">radioM </span><span class="s2">= </span><span class="s1">radioKm </span><span class="s2">* </span><span class="s5">1000</span><span class="s2">;</span>
+        <span class="s0">return </span><span class="s1">G </span><span class="s2">* </span><span class="s1">masaKg </span><span class="s2">/ </span><span class="s1">Math</span><span class="s2">.</span><span class="s1">pow</span><span class="s2">(</span><span class="s1">radioM</span><span class="s2">, </span><span class="s5">2</span><span class="s2">);</span>
+    <span class="s2">}</span>
+
+    <span class="s3">// Habitabl entre -20 y 50 °C y la densidad &gt; 1</span>
+    <span class="s0">public boolean </span><span class="s1">esHabitable</span><span class="s2">(</span><span class="s0">double </span><span class="s1">temperaturaSuperficie</span><span class="s2">) {</span>
+        <span class="s0">boolean </span><span class="s1">temperaturaOk </span><span class="s2">= </span><span class="s1">temperaturaSuperficie </span><span class="s2">&gt;= -</span><span class="s5">20 </span><span class="s2">&amp;&amp; </span><span class="s1">temperaturaSuperficie </span><span class="s2">&lt;= </span><span class="s5">50</span><span class="s2">;</span>
+        <span class="s0">boolean </span><span class="s1">densidadOk </span><span class="s2">= </span><span class="s1">calcularDensidad</span><span class="s2">() &gt; </span><span class="s5">1</span><span class="s2">;</span>
+
+        <span class="s0">if </span><span class="s2">(</span><span class="s1">temperaturaOk </span><span class="s2">&amp;&amp; </span><span class="s1">densidadOk</span><span class="s2">) {</span>
+            <span class="s1">System</span><span class="s2">.</span><span class="s1">out</span><span class="s2">.</span><span class="s1">println</span><span class="s2">(</span><span class="s1">nombre </span><span class="s2">+ </span><span class="s4">&quot;: SI es habitable.&quot;</span><span class="s2">);</span>
+            <span class="s0">return true</span><span class="s2">;</span>
+        <span class="s2">} </span><span class="s0">else </span><span class="s2">{</span>
+            <span class="s0">if </span><span class="s2">(!</span><span class="s1">temperaturaOk</span><span class="s2">) {</span>
+                <span class="s1">System</span><span class="s2">.</span><span class="s1">out</span><span class="s2">.</span><span class="s1">println</span><span class="s2">(</span><span class="s1">nombre </span><span class="s2">+ </span><span class="s4">&quot;: NO, la temperatura esta fuera de -20 a 50 C.&quot;</span><span class="s2">);</span>
+            <span class="s2">}</span>
+            <span class="s0">if </span><span class="s2">(!</span><span class="s1">densidadOk</span><span class="s2">) {</span>
+                <span class="s1">System</span><span class="s2">.</span><span class="s1">out</span><span class="s2">.</span><span class="s1">println</span><span class="s2">(</span><span class="s1">nombre </span><span class="s2">+ </span><span class="s4">&quot;: NO, la densidad debe ser mayor que 1.&quot;</span><span class="s2">);</span>
+            <span class="s2">}</span>
+            <span class="s0">return false</span><span class="s2">;</span>
+        <span class="s2">}</span>
+    <span class="s2">}</span>
+    <span class="s0">public void </span><span class="s1">imprimirReporte</span><span class="s2">(</span><span class="s0">double </span><span class="s1">temperaturaSuperficie</span><span class="s2">) {</span>
+        <span class="s1">System</span><span class="s2">.</span><span class="s1">out</span><span class="s2">.</span><span class="s1">println</span><span class="s2">(</span><span class="s4">&quot;===== FICHA TECNICA =====&quot;</span><span class="s2">);</span>
+        <span class="s1">System</span><span class="s2">.</span><span class="s1">out</span><span class="s2">.</span><span class="s1">println</span><span class="s2">(</span><span class="s4">&quot;Nombre: &quot; </span><span class="s2">+ </span><span class="s1">nombre</span><span class="s2">);</span>
+        <span class="s1">System</span><span class="s2">.</span><span class="s1">out</span><span class="s2">.</span><span class="s1">println</span><span class="s2">(</span><span class="s4">&quot;Masa: &quot; </span><span class="s2">+ </span><span class="s1">masaKg </span><span class="s2">+ </span><span class="s4">&quot; kg&quot;</span><span class="s2">);</span>
+        <span class="s1">System</span><span class="s2">.</span><span class="s1">out</span><span class="s2">.</span><span class="s1">println</span><span class="s2">(</span><span class="s4">&quot;Radio: &quot; </span><span class="s2">+ </span><span class="s1">radioKm </span><span class="s2">+ </span><span class="s4">&quot; km&quot;</span><span class="s2">);</span>
+        <span class="s1">System</span><span class="s2">.</span><span class="s1">out</span><span class="s2">.</span><span class="s1">println</span><span class="s2">(</span><span class="s4">&quot;Distancia a su sol: &quot; </span><span class="s2">+ </span><span class="s1">distanciaSol </span><span class="s2">+ </span><span class="s4">&quot; millones de km&quot;</span><span class="s2">);</span>
+        <span class="s1">System</span><span class="s2">.</span><span class="s1">out</span><span class="s2">.</span><span class="s1">println</span><span class="s2">(</span><span class="s4">&quot;Satelites: &quot; </span><span class="s2">+ </span><span class="s1">cantidadSatelites</span><span class="s2">);</span>
+        <span class="s1">System</span><span class="s2">.</span><span class="s1">out</span><span class="s2">.</span><span class="s1">println</span><span class="s2">(</span><span class="s4">&quot;Volumen: &quot; </span><span class="s2">+ </span><span class="s1">calcularVolumen</span><span class="s2">() + </span><span class="s4">&quot; m3&quot;</span><span class="s2">);</span>
+        <span class="s1">System</span><span class="s2">.</span><span class="s1">out</span><span class="s2">.</span><span class="s1">println</span><span class="s2">(</span><span class="s4">&quot;Densidad: &quot; </span><span class="s2">+ </span><span class="s1">calcularDensidad</span><span class="s2">() + </span><span class="s4">&quot; kg/m3&quot;</span><span class="s2">);</span>
+        <span class="s1">System</span><span class="s2">.</span><span class="s1">out</span><span class="s2">.</span><span class="s1">println</span><span class="s2">(</span><span class="s4">&quot;Gravedad superficial: &quot; </span><span class="s2">+ </span><span class="s1">calcularGravedad</span><span class="s2">() + </span><span class="s4">&quot; m/s2&quot;</span><span class="s2">);</span>
+        <span class="s1">System</span><span class="s2">.</span><span class="s1">out</span><span class="s2">.</span><span class="s1">println</span><span class="s2">(</span><span class="s4">&quot;Temperatura: &quot; </span><span class="s2">+ </span><span class="s1">temperaturaSuperficie </span><span class="s2">+ </span><span class="s4">&quot; C&quot;</span><span class="s2">);</span>
+        <span class="s1">esHabitable</span><span class="s2">(</span><span class="s1">temperaturaSuperficie</span><span class="s2">);</span>
+        <span class="s1">System</span><span class="s2">.</span><span class="s1">out</span><span class="s2">.</span><span class="s1">println</span><span class="s2">(</span><span class="s4">&quot;=======gracias por usar el programa de Ari========&quot;</span><span class="s2">);</span>
+    <span class="s2">}</span>
+<span class="s2">}</span>
+</pre>
+</body>
+</html>
